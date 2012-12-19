@@ -1,0 +1,2 @@
+/etc/init.d/@FLAVOUR@
+/etc/logrotate.d/@FLAVOUR@
