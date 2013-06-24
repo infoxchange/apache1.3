@@ -543,6 +543,7 @@ $(STAMP_DIR)/install-stamp-perl:
 
 $(STAMP_DIR)/install-stamp-mod-perl:
 	@echo -e "\n\n*** Installing libapache-mod-perl ***\n\n"
+	@echo -e "Arch name: $(archname)"
 	dh_testdir
 	dh_testroot
 
