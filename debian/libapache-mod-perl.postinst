@@ -5,12 +5,11 @@ set -e
 # for some reason at upgrade time a directory is not
 # replaced by a symlink provided by the new package
 
-archname=`perl -V::archname: | sed -e "s/'//g"`
-
-if [ ! -h /usr/lib/perl5/$archname/auto/Apache/include ]; then
+if [ ! -h /usr/lib/perl5/auto/Apache/include ]; then
 	cd /
-	rm -rf /usr/lib/perl5/$archname/auto/Apache/include
-	ln -sf ../../../../include/apache-1.3 usr/lib/perl5/$archname/auto/Apache/include
+	rm -rf /usr/lib/perl5/auto/Apache/include
+	mkdir -p usr/lib/perl5/auto/Apache
+	ln -sf ../../../../include/apache-1.3 usr/lib/perl5/auto/Apache/include
 fi
 
 # apache-perl does not need us as DSO
