@@ -1,0 +1,12 @@
+diff -Naurd mod_perl-1.31/lib/Apache/src.pm libapache-mod-perl-1.31-debian/lib/Apache/src.pm
+--- mod_perl-1.31/lib/Apache/src.pm	2013-07-04 11:31:55.792007335 +1000
++++ libapache-mod-perl-1.31-debian/lib/Apache/src.pm	2013-07-04 11:31:30.568010253 +1000
+@@ -285,7 +285,7 @@
+     my $main = $self->main;
+     my $os = $Is_Win32 ? "win32" : "unix";
+     my @inc = (); 
+-    for ($src, "$src/modules/perl", $main, "$src/regex", "$src/os/$os") {
++    for ($src, "$src/modules/perl", $main, "$main/modules/perl", "$src/regex", "$src/os/$os") {
+ 	push @inc, "-I$_" if -d $_;
+     }
+     my $ssl_dir = "$src/../ssl/include";
